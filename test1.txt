@@ -1,0 +1,6 @@
+if cat file1
+
+ABCD
+EFGH
+
+ABCD MNO

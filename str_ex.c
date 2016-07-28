@@ -3,6 +3,17 @@
 #include <stdlib.h>
 
 /************************ Reverse String **************************
+ * Swap the value of the 2 variables
+******************************************************************/
+void swap(char* x, char* y) {
+    if (*x != *y) {
+        *x ^= *y;
+        *y ^= *x;
+        *x ^= *y;
+    }
+}
+
+/************************ Reverse String **************************
  * Reverse the input string with the recursive calls by taking the
  * character from the tail and put to the head.
 ******************************************************************/
@@ -33,9 +44,7 @@ void revStr2(char instr[], int begin, int end) {
     //printf("%s %d %d\n",instr, begin, end);
     if (begin >= end) return;
     else {
-        char tmp = instr[end];
-        instr[end] = instr[begin];
-        instr[begin] = tmp;
+        swap(&instr[begin], &instr[end]);
         revStr2(instr, ++begin, --end);
     } 
 }

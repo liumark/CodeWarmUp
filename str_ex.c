@@ -21,6 +21,7 @@ void reverseString1() {
     char* a2=(char*)malloc(sizeof(char)*strlen(a1));
     revStr1(a1,a2,strlen(a1));
     printf("input=%s length=%lu\nreversed=%s\n", a1, strlen(a1), a2);
+    free(a2);
 }
 /******************************************************************/
 

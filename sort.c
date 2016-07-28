@@ -33,6 +33,19 @@ void assignList(int* arr, int n) {
     }
 }
 
+void freeList() {
+    ListElem* tmp = mList;
+    ListElem* curE = mList;
+
+    while (tmp->next != NULL) {
+        tmp = tmp->next;
+        free(curE);
+        curE = tmp;
+    }
+    free(tmp);
+    mList = NULL;
+}
+
 void swap(int* x, int* y) {
     if (*x != *y) {
         *x ^= *y;
@@ -267,6 +280,8 @@ int main() {
         printf("%d ", a[i]);
     }
     printf("\n");
+
+    freeList();
 
     return 0;
 }
